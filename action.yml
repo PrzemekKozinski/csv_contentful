@@ -1,0 +1,13 @@
+name: 'Import data'
+description: 'Import data into Contentful'
+#inputs:
+ # who-to-greet:  # id of input
+  #  description: 'Who to greet'
+   # required: true
+    #default: 'World'
+outputs:
+  time: # id of output
+    description: 'Data have been imported...'
+runs:
+  using: 'node20'
+  main: 'import.ts'
