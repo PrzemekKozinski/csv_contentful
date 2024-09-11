@@ -6,4 +6,28 @@ jobs:
   check-accessibility-job:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello man!"
+      - uses: actions/checkout@v4
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - name: Configure Node 20 with pnpm & caching setup
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile # equivalent of npm ci
+      #- run: npm run build --if-present
+      - run: pnpm dev & npx wait-on http://localhost:3000
+      - name: Run pa11y
+        run: |
+          npm install -g pa11y
+          pa11y http://localhost:3000
