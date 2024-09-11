@@ -1,4 +1,4 @@
-name: check the accessibility
+name: Workflow / Check the accessibility
 on: [push]
 
 jobs:
