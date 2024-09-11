@@ -3,7 +3,7 @@ run-name: ${{ github.actor }} is testing accessibility
 on: [push]
 
 jobs:
-  echo:
+  check-accessibility-job:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Hello man!"
