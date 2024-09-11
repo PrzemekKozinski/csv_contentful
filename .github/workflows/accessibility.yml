@@ -1,6 +1,6 @@
 name: check the accessibility
 on: [push]
-#jobs:
+
 jobs:
   echo:
     runs-on: ubuntu-latest
