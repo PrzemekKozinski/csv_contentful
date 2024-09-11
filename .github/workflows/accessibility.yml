@@ -1,4 +1,5 @@
 name: Workflow / Check the accessibility
+run-name: ${{ github.actor }} is testing accessibility 
 on: [push]
 
 jobs:
